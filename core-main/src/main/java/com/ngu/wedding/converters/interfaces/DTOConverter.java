@@ -10,10 +10,10 @@ public interface DTOConverter<T, F>
 	/**
 	 * Convert to the DTO from DOA domain
 	 */
-	T covertToDTO(F from);
+	T convertFromDTO(F from);
 
 	/**
 	 * Convert to the DOA domain from DTO
 	 */
-	F covertFromDTO(T to);
+	F convertToBean(T to);
 }

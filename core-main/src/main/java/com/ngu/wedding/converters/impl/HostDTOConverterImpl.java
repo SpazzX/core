@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
 public class HostDTOConverterImpl implements HostDTOConverter
 {
     @Override
-    public Host covertToDTO(HostDTO dto)
+    public Host convertFromDTO(HostDTO dto)
     {
         return new Host(dto.getFirstName(), dto.getLastName());
     }
 
     @Override
-    public HostDTO covertFromDTO(Host to)
+    public HostDTO convertToBean(Host to)
     {
         return new HostDTO(to.getFirstName(), to.getFirstName(), to.getPersonID());
     }

@@ -8,12 +8,12 @@ public class TableDTOConverterImpl implements TableDTOConverter
 {
 
     @Override
-    public Table covertToDTO(TableDTO from) {
+    public Table convertFromDTO(TableDTO from) {
         return null;
     }
 
     @Override
-    public TableDTO covertFromDTO(Table to) {
+    public TableDTO convertToBean(Table to) {
         return null;
     }
 }

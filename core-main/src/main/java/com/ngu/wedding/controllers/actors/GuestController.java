@@ -21,7 +21,7 @@ public class GuestController extends MainController
     @ResponseStatus(HttpStatus.CREATED)
     public @ResponseBody Guest addNewGuest(@RequestBody GuestDTO guestDTO)
     {
-        Guest guest = getGuestDTOConverter().covertToDTO(guestDTO);
+        Guest guest = getGuestDTOConverter().convertFromDTO(guestDTO);
         guest = getGuestRepository().save(guest);
 
         LOG.info(guest.toString() + " successfully saved into DB");
