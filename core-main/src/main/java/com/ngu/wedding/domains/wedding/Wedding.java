@@ -1,32 +1,19 @@
 package com.ngu.wedding.domains.wedding;
 
+import com.ngu.wedding.domains.AbstractDomain;
 import com.ngu.wedding.domains.actors.Guest;
 import com.ngu.wedding.domains.actors.Host;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
-public class Wedding
+public class Wedding extends AbstractDomain
 {
-    @Id
-    private String weddingID;
-
     private String weddingTitle;
     private String weddingLocation;
     private boolean active;
     @DBRef private List<Host> hosts;
     @DBRef private List<Guest> guests;
-
-    public String getWeddingID()
-    {
-        return weddingID;
-    }
-
-    public void setWeddingID(String weddingID)
-    {
-        this.weddingID = weddingID;
-    }
 
     public String getWeddingTitle()
     {

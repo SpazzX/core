@@ -1,6 +1,7 @@
 package com.ngu.wedding.controllers.actors;
 
 import com.ngu.wedding.controllers.MainController;
+import com.ngu.wedding.domains.AbstractDomain;
 import com.ngu.wedding.domains.actors.Guest;
 import com.ngu.wedding.dto.actors.GuestDTO;
 import org.slf4j.Logger;
@@ -21,12 +22,12 @@ public class GuestController extends MainController
     @ResponseStatus(HttpStatus.CREATED)
     public @ResponseBody Guest addNewGuest(@RequestBody GuestDTO guestDTO)
     {
-        Guest guest = getGuestDTOConverter().convertFromDTO(guestDTO);
-        guest = getGuestRepository().save(guest);
+        AbstractDomain guest = getDtoConverterFactory().convertFromDTO(guestDTO);
+        guest = getGuestRepository().save((Guest) guest);
 
         LOG.info(guest.toString() + " successfully saved into DB");
 
-        return guest;
+        return (Guest) guest;
     }
 
     @GetMapping()

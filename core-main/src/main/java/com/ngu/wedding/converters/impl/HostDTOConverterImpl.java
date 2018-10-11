@@ -17,7 +17,7 @@ public class HostDTOConverterImpl implements HostDTOConverter
     @Override
     public HostDTO convertToBean(Host to)
     {
-        return new HostDTO(to.getFirstName(), to.getFirstName(), to.getPersonID());
+        return new HostDTO(to.getFirstName(), to.getFirstName(), to.getDomainUUID());
     }
 
 }

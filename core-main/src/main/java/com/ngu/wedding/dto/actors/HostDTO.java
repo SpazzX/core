@@ -7,18 +7,7 @@ public class HostDTO extends PersonDTO
     {
         setFirstName(firstName);
         setLastName(lastName);
-        setHostID(id);
+        setDomainUUID(id);
     }
 
-    private String hostID;
-
-    public String getHostID()
-    {
-        return hostID;
-    }
-
-    public void setHostID(String hostID)
-    {
-        this.hostID = hostID;
-    }
 }

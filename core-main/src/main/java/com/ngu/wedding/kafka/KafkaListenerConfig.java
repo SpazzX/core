@@ -1,7 +1,4 @@
-package com.ngu.wedding.config;
-
-import org.springframework.context.annotation.Configuration;
-import org.springframework.kafka.annotation.KafkaListener;
+package com.ngu.wedding.kafka;
 
 /**
  * Spring wired object that has a Kafka Listener.  Using weddinginfo as the topic.  GroupID is the consumer on this
@@ -11,7 +8,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 //@Profile("dev")
 public class KafkaListenerConfig
 {
-
+/*
 	@KafkaListener(topics = "weddinginfo", groupId = "guests")
 	public void listenForGuestRequest(String message)
 	{
@@ -23,5 +20,5 @@ public class KafkaListenerConfig
 	{
 		System.out.println("Received a message from a host: " + message);
 	}
-
+*/
 }

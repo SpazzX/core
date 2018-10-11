@@ -1,7 +1,5 @@
 package com.ngu.wedding.domains.actors;
 
-import org.springframework.data.annotation.Id;
-
 public class Guest extends Person
 {
 	public Guest()

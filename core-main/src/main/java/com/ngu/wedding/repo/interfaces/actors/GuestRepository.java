@@ -1,4 +1,4 @@
-package com.ngu.wedding.repo;
+package com.ngu.wedding.repo.interfaces.actors;
 
 import java.util.List;
 

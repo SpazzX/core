@@ -1,6 +1,8 @@
 package com.ngu.wedding.dto.actors;
 
-public abstract class PersonDTO
+import com.ngu.wedding.dto.AbstractDTO;
+
+public abstract class PersonDTO extends AbstractDTO
 {
     private String firstName;
     private String lastName;

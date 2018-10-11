@@ -2,17 +2,16 @@ package com.ngu.wedding.domains.table;
 
 import java.util.Set;
 
-import org.springframework.data.annotation.Id;
+import com.ngu.wedding.domains.AbstractDomain;
+import com.ngu.wedding.domains.wedding.Wedding;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import com.ngu.wedding.domains.actors.Person;
 
 
-public class Table
+public class Table extends AbstractDomain
 {
-
-	@Id private int id;
-
+	@DBRef private Wedding wedding;
 	@DBRef private Set<Person> people;
 
 	public Table()
@@ -20,12 +19,14 @@ public class Table
 
 	}
 
-	public Table(int id, Set<Person> people)
+	public Table(Set<Person> people)
 	{
-		setId(id);
 		setPeople(people);
 	}
 
+	public Wedding getWedding() {
+		return wedding;
+	}
 
 	public Set<Person> getPeople()
 	{
@@ -35,15 +36,5 @@ public class Table
 	public void setPeople(Set<Person> people)
 	{
 		this.people = people;
-	}
-
-	public int getId()
-	{
-		return id;
-	}
-
-	public void setId(int id)
-	{
-		this.id = id;
 	}
 }
