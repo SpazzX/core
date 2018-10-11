@@ -1,12 +1,12 @@
 package com.ngu.wedding.domains.actors;
 
-import org.springframework.data.annotation.Id;
+import com.ngu.wedding.domains.AbstractDomain;
 
-public abstract class Person
+public abstract class Person extends AbstractDomain
 {
-    @Id private String personID;
-    public String firstName;
-    public String lastName;
+    private String firstName;
+    private String lastName;
+
 
     public String getFirstName() {
         return firstName;
@@ -22,10 +22,6 @@ public abstract class Person
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getPersonID() {
-        return personID;
     }
 
 }

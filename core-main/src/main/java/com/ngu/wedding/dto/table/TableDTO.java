@@ -3,9 +3,10 @@ package com.ngu.wedding.dto.table;
 import java.util.Set;
 
 import com.ngu.wedding.domains.actors.Person;
+import com.ngu.wedding.dto.AbstractDTO;
 import com.ngu.wedding.dto.actors.PersonDTO;
 
-public class TableDTO
+public class TableDTO extends AbstractDTO
 {
 	private int tableID;
 

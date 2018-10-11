@@ -17,6 +17,6 @@ public class GuestDTOConverterImpl implements GuestDTOConverter
     @Override
     public GuestDTO convertToBean(Guest to)
     {
-        return new GuestDTO(to.getFirstName(), to.getLastName(), to.getPersonID());
+        return new GuestDTO(to.getFirstName(), to.getLastName(), to.getDomainUUID());
     }
 }

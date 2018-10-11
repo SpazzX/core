@@ -1,16 +1,4 @@
-package com.ngu.wedding.config;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.common.serialization.StringDeserializer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.kafka.annotation.EnableKafka;
-import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
-import org.springframework.kafka.core.ConsumerFactory;
-import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+package com.ngu.wedding.kafka;
 
 /**
  * Init the Consumer Config for Kafka.  GroupID could be overarching Domain, maybe break out more configs?
@@ -20,7 +8,7 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 public class KafkaConsumerConfig
 {
 
-	private ApplicationProperties applicationProperties;
+	/*private ApplicationProperties applicationProperties;
 
 	public KafkaConsumerConfig(ApplicationProperties applicationProperties)
 	{
@@ -47,5 +35,7 @@ public class KafkaConsumerConfig
 		factory.setConsumerFactory(consumerFactory);
 		return factory;
 	}
+
+	*/
 
 }

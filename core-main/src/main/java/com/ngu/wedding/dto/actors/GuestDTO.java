@@ -6,22 +6,11 @@ public class GuestDTO extends PersonDTO
     {
         setFirstName(firstName);
         setLastName(lastName);
-        setGuestID(id);
+        setDomainUUID(id);
     }
 
-    private String guestID;
     private String weddingID;
     private int guestCount;
-
-    public String getGuestID()
-    {
-        return guestID;
-    }
-
-    public void setGuestID(String guestID)
-    {
-        this.guestID = guestID;
-    }
 
     public String getWeddingID()
     {

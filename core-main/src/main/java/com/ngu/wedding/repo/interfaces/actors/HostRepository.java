@@ -1,4 +1,4 @@
-package com.ngu.wedding.repo;
+package com.ngu.wedding.repo.interfaces.actors;
 
 import com.ngu.wedding.domains.actors.Host;
 import org.springframework.data.mongodb.repository.MongoRepository;
