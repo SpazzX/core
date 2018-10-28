@@ -3,6 +3,7 @@ package com.ngu.wedding.controllers;
 import com.ngu.wedding.converters.factory.DTOConverterFactory;
 import com.ngu.wedding.repo.interfaces.actors.GuestRepository;
 import com.ngu.wedding.repo.interfaces.actors.HostRepository;
+import com.ngu.wedding.repo.interfaces.location.AddressRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,10 @@ public class MainController
     @Autowired
     private HostRepository hostRepository;
     @Autowired
+    private AddressRepository addressRepository;
+    @Autowired
     private DTOConverterFactory dtoConverterFactory;
+
     //@Autowired
     //private KafkaTemplate<String, String> kafkaTemplate;
 
@@ -64,5 +68,13 @@ public class MainController
 
     public void setDtoConverterFactory(DTOConverterFactory dtoConverterFactory) {
         this.dtoConverterFactory = dtoConverterFactory;
+    }
+
+    public AddressRepository getAddressRepository() {
+        return addressRepository;
+    }
+
+    public void setAddressRepository(AddressRepository addressRepository) {
+        this.addressRepository = addressRepository;
     }
 }

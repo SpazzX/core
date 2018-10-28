@@ -29,11 +29,11 @@ public class DefaultDTOConverterFactory implements DTOConverterFactory
     }
 
     @Override
-    public AbstractDTO convertToBean(AbstractDomain to)
+    public AbstractDTO convertToDTO(AbstractDomain to)
     {
         if(to instanceof Guest)
         {
-            return guestDTOConverter.convertToBean((Guest) to);
+            return guestDTOConverter.convertToDTO((Guest) to);
         }
         return null;
     }

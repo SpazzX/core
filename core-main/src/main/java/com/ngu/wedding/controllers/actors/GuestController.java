@@ -3,11 +3,13 @@ package com.ngu.wedding.controllers.actors;
 import com.ngu.wedding.controllers.MainController;
 import com.ngu.wedding.domains.AbstractDomain;
 import com.ngu.wedding.domains.actors.Guest;
+import com.ngu.wedding.domains.location.Address;
 import com.ngu.wedding.dto.actors.GuestDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,12 +24,17 @@ public class GuestController extends MainController
     @ResponseStatus(HttpStatus.CREATED)
     public @ResponseBody Guest addNewGuest(@RequestBody GuestDTO guestDTO)
     {
-        AbstractDomain guest = getDtoConverterFactory().convertFromDTO(guestDTO);
-        guest = getGuestRepository().save((Guest) guest);
+        Guest guest = (Guest) getDtoConverterFactory().convertFromDTO(guestDTO);
+        if(!CollectionUtils.isEmpty(guest.getAddresses()))
+        {
+            getAddressRepository().saveAll(guest.getAddresses());
+        }
+
+        guest = getGuestRepository().save(guest);
 
         LOG.info(guest.toString() + " successfully saved into DB");
 
-        return (Guest) guest;
+        return guest;
     }
 
     @GetMapping()

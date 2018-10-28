@@ -13,7 +13,7 @@ public class AbstractDTO implements Serializable
     private String domainUUID;
     private Date createdTime;
     private Date lastModDate;
-    private boolean active;
+    private boolean active = true;
 
     public String getDomainUUID() {
         return domainUUID;

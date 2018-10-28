@@ -3,6 +3,7 @@ package com.ngu.wedding.domains.wedding;
 import com.ngu.wedding.domains.AbstractDomain;
 import com.ngu.wedding.domains.actors.Guest;
 import com.ngu.wedding.domains.actors.Host;
+import com.ngu.wedding.domains.location.Address;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
@@ -11,9 +12,10 @@ public class Wedding extends AbstractDomain
 {
     private String weddingTitle;
     private String weddingLocation;
-    private boolean active;
     @DBRef private List<Host> hosts;
     @DBRef private List<Guest> guests;
+    @DBRef private Address receptionVenue;
+    @DBRef private Address ceremonyVenue;
 
     public String getWeddingTitle()
     {
@@ -54,8 +56,19 @@ public class Wedding extends AbstractDomain
         this.guests = guests;
     }
 
-    public boolean isActive()
-    {
-        return active;
+    public Address getReceptionVenue() {
+        return receptionVenue;
+    }
+
+    public void setReceptionVenue(Address receptionVenue) {
+        this.receptionVenue = receptionVenue;
+    }
+
+    public Address getCeremonyVenue() {
+        return ceremonyVenue;
+    }
+
+    public void setCeremonyVenue(Address ceremonyVenue) {
+        this.ceremonyVenue = ceremonyVenue;
     }
 }

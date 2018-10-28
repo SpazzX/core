@@ -14,7 +14,7 @@ public class Guest extends Person
 
 	private String weddingID;
 
-	private int guestCount;
+	private int guestCount = 0;
 
 	public int getGuestCount() {
 		return guestCount;

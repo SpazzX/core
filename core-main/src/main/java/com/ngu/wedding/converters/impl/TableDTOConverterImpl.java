@@ -13,7 +13,7 @@ public class TableDTOConverterImpl implements TableDTOConverter
     }
 
     @Override
-    public TableDTO convertToBean(Table to) {
+    public TableDTO convertToDTO(Table to) {
         return null;
     }
 }

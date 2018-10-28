@@ -10,7 +10,7 @@ public class GuestDTO extends PersonDTO
     }
 
     private String weddingID;
-    private int guestCount;
+    private int guestCount = 0;
 
     public String getWeddingID()
     {
@@ -31,4 +31,5 @@ public class GuestDTO extends PersonDTO
     {
         this.guestCount = guestCount;
     }
+
 }

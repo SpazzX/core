@@ -15,5 +15,5 @@ public interface DTOConverter<T, F>
 	/**
 	 * Convert to the DOA domain from DTO
 	 */
-	F convertToBean(T to);
+	F convertToDTO(T to);
 }
